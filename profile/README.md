@@ -1,16 +1,31 @@
 # MonoPlay
 
-Gaming platform on Monolythium.
+Multi-chain game launcher and publishing platform powered by Monolythium.
 
 ## Repositories
 
 | Repo | Description |
 |------|-------------|
-| [monoplay-website](https://github.com/monoplay-xyz/monoplay-website) | MonoPlay platform website |
+| [monoplay-contracts](https://github.com/monoplay-xyz/monoplay-contracts) | Smart contracts (GameRegistry, ReleaseRegistry, LicenseRegistry, SeederRewards) |
+| [monoplay-backend](https://github.com/monoplay-xyz/monoplay-backend) | Backend API gateway (catalog, licenses, auth, submissions) |
+| [monoplay-indexer](https://github.com/monoplay-xyz/monoplay-indexer) | Chain event indexer (Monolythium blockchain) |
+| [monoplay-launcher](https://github.com/monoplay-xyz/monoplay-launcher) | Desktop game launcher (Tauri 2 + React 19) |
+| [monoplay-dev-console](https://github.com/monoplay-xyz/monoplay-dev-console) | Developer/publisher portal (Next.js) |
+| [monoplay-admin-console](https://github.com/monoplay-xyz/monoplay-admin-console) | Admin moderation console (Next.js) |
+| [monoplay-scanner](https://github.com/monoplay-xyz/monoplay-scanner) | Security scanning service (Python + YARA) |
 
-## Coming Soon
+## Architecture
 
-MonoPlay is building gaming experiences powered by Monolythium blockchain technology.
+```
+Launcher (Desktop)  <-->  Backend API  <-->  PostgreSQL
+                              |
+Dev Console (Web)   <-->      |
+Admin Console (Web) <-->      |
+                              |
+Scanner (Python)    <-->      |
+                              |
+Chain Indexer       <-->  Monolythium Blockchain
+```
 
 ## Links
 
